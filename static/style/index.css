@@ -1,0 +1,39 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center
+}
+.green-txt {
+    color: darkgreen;
+}
+.two-lines {
+    white-space: pre-line;
+}
+table {
+    width: 95%; 
+    border-collapse: collapse;
+    margin: 20px auto; 
+}
+th, td {
+    border: 1px solid #848484;
+    text-align: left;
+    padding: 8px;
+}
+th {
+    background-color: #f2f2f2;
+}
+img {
+    max-width: 100%; 
+    height: auto; 
+    display: block; 
+    margin: 0 auto; 
+}
+input[type="submit"] {
+    background-color: #0c5c2c; 
+    color: white;
+    cursor: pointer;
+}
+.error-message {
+    color: red;
+    font-weight: bold;
+}

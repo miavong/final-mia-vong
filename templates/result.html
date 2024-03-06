@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Plant Curiosity</title>
+    <head>
+        <link rel="stylesheet" href="{{url_for('static', filename='style/index.css')}}">
+    <body>
+        <form action="/submit_result" method="post">
+            <h1> Welcome to Plant Curiosity </h1>
+            <p>
+                <span class="green-txt">Have you ever pondered the rich diversity of plants?</span><br>
+                <span class="two-lines">With Plant Curiosity, you can explore the botanical wonders of the world!
+                Simply type any plant into our plant generator and begin discovering similar species.</span>
+            </p>
+            <h2> Plant Generator </h2>
+            <p>
+                <lable for="name">Plant Name</lable><br>
+                <input type="text" id="name" name="plant_name">
+            </p>
+            <p><input type="submit" value="SEARCH"></p>
+        </form>
+        {% if error_message %}
+            <p class="error-message">{{ error_message }}</p>
+        {% endif %}
+        {% if plants %}
+        <table>
+            <thead>
+                <tr>
+                    <th> Image </th>
+                    <th> Common Name </th>
+                    <th> Scientific Name </th>
+                    <th> Genus </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for plant in plants %}
+                    <tr>
+                        <td height="200px"> 
+                            <img src = {{ plant.image_url }} width="200px"/>
+                        </td>
+                        <td> {{ plant.common_name }} </td>
+                        <td> {{ plant.scientific_name }} </td>
+                        <td> {{ plant.genus}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+    </body>
+</html>
